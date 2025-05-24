@@ -1,29 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import UploadImage from './components/UploadImage';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import HistoryPage from './pages/HistoryPage';
-import { ImageHistoryProvider } from './context/ImageHistoryContext';
-
-function App() {
+const App: React.FC = () => {
   return (
-    <ImageHistoryProvider>
-      <Router>
-        <div className="flex flex-col min-h-screen bg-gray-50">
-          <Header />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/history" element={<HistoryPage />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </ImageHistoryProvider>
+    <div className="App">
+      <h1>Object Detection App</h1>
+      <UploadImage />
+    </div>
   );
-}
+};
 
 export default App;
